@@ -1,0 +1,14 @@
+- name: "Installing apt's"
+  apt:
+      name: "{{ item }}"
+      state: latest
+  loop:
+    - nvtop
+    - lz4
+    - neovim
+    - auditd
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg-agent
+    - software-properties-common

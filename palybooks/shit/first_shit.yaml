@@ -1,0 +1,5 @@
+- name: "First Playbook in da world"
+  hosts: all
+  gather_facts: true
+  roles:
+    - role: install_update

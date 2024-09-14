@@ -1,0 +1,26 @@
+- name: add GPG key
+  apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+- name: add docker repository to apt
+  apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+- name: install docker
+  apt:
+      name: "{{ item }}"
+      state: latest
+      update_cache: yes
+  loop:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+- name: check docker is active
+  service:
+        name: docker
+        state: started
+        enabled: yes
+- name: Ensure group "docker" exists
+  ansible.builtin.group:
+    name: docker
+    state: present

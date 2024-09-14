@@ -1,0 +1,3 @@
+- import_tasks: update_apt.yaml
+- import_tasks: install_apt.yaml
+- import_tasks: install_docker.yaml
