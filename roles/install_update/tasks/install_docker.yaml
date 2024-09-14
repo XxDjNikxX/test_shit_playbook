@@ -1,25 +1,41 @@
-- name: add GPG key
+- name: Add GPG key
   apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
-- name: add docker repository to apt
+- name: Add docker repository to apt
   apt_repository:
         repo: deb https://download.docker.com/linux/ubuntu bionic stable
         state: present
-- name: install docker
+- name: Install docker
   apt:
       name: "{{ item }}"
       state: latest
-      update_cache: yes
+      update_cache: true
   loop:
       - docker-ce
       - docker-ce-cli
       - containerd.io
-- name: check docker is active
+
+- name: "Check docker is active"
   service:
         name: docker
         state: started
-        enabled: yes
+        enabled: true
+
+- name: "Adding to docker group"
+  user:
+      name: "{{ item }}"
+      groups: docker
+      append: true
+  with_items: "{{ users }}"
+
+- name: Install docker-compose from official github repo
+  remote_user: ansible_ubuntu_demo
+  get_url:
+    url : https://github.com/docker/compose/releases/download/v2.29.2/docker-compose-linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: 'u+x,g+x'
+
 - name: Ensure group "docker" exists
   ansible.builtin.group:
     name: docker

@@ -1,3 +1,4 @@
 inventories/inventory.ini
 ansible.cfg
 .vscode
+inventories/group_vars/all/users.yaml
