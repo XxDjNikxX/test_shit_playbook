@@ -1,0 +1,5 @@
+- name: "Deploy Grafana"
+  hosts: all
+  gather_facts: true
+  roles:
+    - role: roles/deploy_grafana
