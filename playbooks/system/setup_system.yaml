@@ -2,4 +2,4 @@
   hosts: all
   gather_facts: true
   roles:
-    - role: setup_server
+    - role: roles/setup_server

@@ -12,5 +12,24 @@
     - curl
     - gnupg-agent
     - software-properties-common
+    - smartmontools
+    - htop
+    - iotop
+    - atop
+    - nmon
+    - sysstat
+    - net-tools
+    - iftop
+    - nethogs
+    - tcpdump
+    - lsof
+    - ncdu
+    - dstat
+    - glances
+    - ioping
+    - stress-ng
+    - ethtool
+    - nload
+    - bmon
   tags:
     - install_update_packages

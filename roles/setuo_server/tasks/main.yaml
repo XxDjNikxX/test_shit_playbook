@@ -1,4 +1,0 @@
-#- import_tasks: update_apt.yaml
-#- import_tasks: install_apt.yaml
-#- import_tasks: install_docker.yaml
-- import_tasks: config_system.yaml
