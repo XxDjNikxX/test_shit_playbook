@@ -12,3 +12,5 @@
     - curl
     - gnupg-agent
     - software-properties-common
+  tags:
+    - install_update_packages
