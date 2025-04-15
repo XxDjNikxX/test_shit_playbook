@@ -1,3 +1,4 @@
-inventory/inventory.ini
+./inventory/
 .vscode
 inventory/group_vars/all/users.yaml
+inventory/inventory.ini
