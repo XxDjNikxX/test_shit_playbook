@@ -1,0 +1,2 @@
+- import_tasks: copy_config.yaml
+- import_tasks: deploy.yaml

@@ -1,0 +1,12 @@
+---
+- name: create /opt/telegraf directory
+  file:
+    path: /opt/telegraf
+    state: directory
+    mode: '0755'
+
+- name: copy telegraf.conf to /opt/telegraf/telegraf.conf
+  copy:
+    src: copyfiles/telegraf.conf
+    dest: /opt/telegraf/telegraf.conf
+    mode: '0644'

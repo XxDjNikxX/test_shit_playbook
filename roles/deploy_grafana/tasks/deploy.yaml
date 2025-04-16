@@ -14,7 +14,12 @@
             - '3000:3000'
           volumes:
             - grafana-storage:/var/lib/grafana
+          networks:
+            - telegraf_monitoring
       volumes:
             {"grafana-storage"}
+      networks:
+        telegraf_monitoring:
+          external: true
   tags:
       - deploy_grafana
